@@ -19,6 +19,7 @@ Patch1:		%{name}-missing-zlib-flag.patch.bz2
 License:	Artistic
 Url:		http://angel-wars.sourceforge.net/
 Group:		Games/Arcade
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	SDL-devel SDL_mixer-devel oggvorbis-devel
 BuildRequires:	smpeg-devel png-devel jpeg-devel
 
