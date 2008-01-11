@@ -59,16 +59,6 @@ cp -a %{name}/images $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}
 cp -a %{name}/levels $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}
 cp -a %{name}/sounds $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}
 
-install -d %{buildroot}%{_menudir}
-cat <<EOF > %{buildroot}%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		  icon=%{name}.png \
-		  needs="x11" \
-		  section="More Applications/Games/Arcade" \
-		  title="Angel Wars"\
-		  longtitle="%{Summary}"\
-                  xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -104,6 +94,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 
