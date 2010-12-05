@@ -1,6 +1,6 @@
 %define	name	angelwars
 %define	version	0.24
-%define release	%mkrel 12
+%define release	%mkrel 13
 %define Summary	Fast-paced, old-fashioned side-scrolling space shooter
 
 Summary:	%{Summary}
