@@ -1,8 +1,7 @@
 sources:
-  "angelwars-0.24.tar.bz2:"	52e1de4d42bcc6805ba6e6179c435546da3dae2d
-  "angelwars-16x16.png:"	ca24b1ef0c0d68b5a6f30212e0154906beae907c
-  "angelwars-32x32.png:"	1924b5b83a77dba6fbacc2c1232a2cc7c308bd7a
-  "angelwars-48x48.png:"	cd35203ca9383933175c3204cad02ff199a156df
-  "angelwars-docs-0.24.tar.bz2:"	4fa16e1d30192e3fc269450351052be0c8335cd3
-  "angelwars-levels-0.24.tar.bz2:"	34accf585b0dc7501319b94a13e7ddb3c5446803
-  "angelwars-media-0.24.tar.bz2:"	3a3e98da53794fb6c78366e590340369a8f119d5
+  "angelwars-0.24.tar.bz2": 52e1de4d42bcc6805ba6e6179c435546da3dae2d
+  "angelwars-docs-0.24.tar.bz2": 4fa16e1d30192e3fc269450351052be0c8335cd3
+  "angelwars-gcc32.fix.patch.bz2": e92cf44b426ba35760ad93f0baf680aedef78d7b
+  "angelwars-levels-0.24.tar.bz2": 34accf585b0dc7501319b94a13e7ddb3c5446803
+  "angelwars-media-0.24.tar.bz2": 3a3e98da53794fb6c78366e590340369a8f119d5
+  "angelwars-missing-zlib-flag.patch.bz2": 6eecb43d4eb55f99da63d908b4ca84d630a177e2

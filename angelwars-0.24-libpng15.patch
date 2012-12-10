@@ -1,0 +1,52 @@
+diff -urN angelwars-0.24/angelwars/IMG_png.c angelwars-0.24-patched/angelwars/IMG_png.c
+--- angelwars-0.24/angelwars/IMG_png.c	2000-06-07 09:17:06.000000000 +1100
++++ angelwars-0.24-patched/angelwars/IMG_png.c	2012-11-06 17:41:28.000000000 +1100
+@@ -105,6 +105,8 @@
+ 	Uint32 Bmask;
+ 	Uint32 Amask;
+ 	SDL_Palette *palette;
++	int num_palette = 0;
++	png_colorp tmp_palette = NULL;
+ 	png_bytep *row_pointers;
+ 	int row, i;
+ 
+@@ -135,7 +137,7 @@
+ 	 * the normal method of doing things with libpng).  REQUIRED unless you
+ 	 * set up your own error handlers in png_create_read_struct() earlier.
+ 	 */
+-	if ( setjmp(png_ptr->jmpbuf) ) {
++	if ( setjmp(png_jmpbuf(png_ptr)) ) {
+ 		IMG_SetError("Error reading the PNG file.");
+ 		goto done;
+ 	}
+@@ -196,7 +198,7 @@
+ 		}
+ 	}
+ 	surface = SDL_AllocSurface(SDL_SWSURFACE, width, height,
+-			bit_depth*info_ptr->channels, Rmask,Gmask,Bmask,Amask);
++			bit_depth*png_get_channels(png_ptr, info_ptr), Rmask,Gmask,Bmask,Amask);
+ 	if ( surface == NULL ) {
+ 		IMG_SetError("Out of memory");
+ 		goto done;
+@@ -223,12 +225,15 @@
+ 
+ 	/* Load the palette, if any */
+ 	palette = surface->format->palette;
+-	if ( palette && (info_ptr->num_palette > 0) ) {
+-		palette->ncolors = info_ptr->num_palette; 
+-		for( i=0; i<info_ptr->num_palette; ++i ) {
+-			palette->colors[i].b =(Uint8)info_ptr->palette[i].blue;
+-			palette->colors[i].g =(Uint8)info_ptr->palette[i].green;
+-			palette->colors[i].r =(Uint8)info_ptr->palette[i].red;
++	if ( palette ) {
++		png_get_PLTE(png_ptr, info_ptr, &tmp_palette, &num_palette);
++		if (num_palette > 0 ) {
++			palette->ncolors = num_palette; 
++			for( i=0; i<num_palette; ++i ) {
++				palette->colors[i].b = tmp_palette[i].blue;
++				palette->colors[i].g = tmp_palette[i].green;
++				palette->colors[i].r = tmp_palette[i].red;
++			}
+ 		}
+ 	}
+ 
