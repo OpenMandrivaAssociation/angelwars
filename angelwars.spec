@@ -1,7 +1,7 @@
 Summary:	Fast-paced, old-fashioned side-scrolling space shooter
 Name:		angelwars
 Version:	0.24
-Release:	14
+Release:	15
 Group:		Games/Arcade
 License:	Artistic
 Url:		http://angel-wars.sourceforge.net/
