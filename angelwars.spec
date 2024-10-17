@@ -4,7 +4,7 @@ Version:	0.24
 Release:	15
 Group:		Games/Arcade
 License:	Artistic
-Url:		http://angel-wars.sourceforge.net/
+Url:		https://angel-wars.sourceforge.net/
 Source0:	http://download.sourceforge.net/angel-wars/%{name}-%{version}.tar.bz2
 Source1:	http://download.sourceforge.net/angel-wars/%{name}-media-%{version}.tar.bz2
 Source2:	http://download.sourceforge.net/angel-wars/%{name}-docs-%{version}.tar.bz2
