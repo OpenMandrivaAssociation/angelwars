@@ -15,6 +15,11 @@ Source13:	%{name}-48x48.png
 Patch0:		%{name}-gcc32.fix.patch.bz2
 Patch1:		%{name}-missing-zlib-flag.patch.bz2
 Patch2:		angelwars-0.24-libpng15.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(libpng)
